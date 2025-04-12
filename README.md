@@ -1,2 +1,2 @@
 # The-Currency-Bridge
- A program to real time currency exchange
+ This project is a simple real-time exchange rate checker.
