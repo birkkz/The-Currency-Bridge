@@ -36,6 +36,12 @@ if (args.length > 0) {
             base = value;
         } else if (key === 'symbols') {
             symbols = value.toUpperCase().split(',');
+        } else if (key === '-help' || key === '-h' || key === '--help') {
+            console.log('Usage: node converter.js [amount=1] [base=USD] [symbols=EUR,GBP,JPY]');
+            console.log('Example: node converter.js amount=10 base=USD symbols=CAD,EUR');
+            console.log('The defalt values is: amount=1 base=BRL symbols=CAD,EUR,GBP,JPY,AUD'); 
+            console.log('Extra: --version to see the version of the script');
+            process.exit(0);
         } else {
             console.error(`Unknown argument: ${key}`);
         }
@@ -43,5 +49,6 @@ if (args.length > 0) {
 }
 
 // execute the function with the actiarguments
-
+console.log(`Executing convert of the amount ${amount} from ${base}`);
+console.log('Results: ');
 getRate(base, symbols, amount);
